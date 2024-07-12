@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.landing-page {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: cadetblue;
+  color: #fff;
+  padding: 10px 20px;
+  height: 5vh;
+  ;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 15px;
+  list-style-type: none;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.nav {
+  display: flex;
+  text-decoration: none;
+}
+
+.a nav-link {
+  list-style-type: none;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  ;
+}
+
+.btn:hover {
+  background-color: #565e64;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #565e64;
+}
+
+.header-content {
+  position: relative;
+  text-align: center;
+  padding: 0;
+  border: none;
+}
+
+.slick-slider {
+  width: 100%;
+  height: 500px; /* Điều chỉnh chiều cao tùy thuộc vào nhu cầu */
+  border-bottom: 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 500px; /* Đảm bảo tỉ lệ chiều cao tự động */
+  object-fit: cover; /* Đảm bảo hình ảnh đầy đủ và không bị biến dạng */
+  border-bottom: 20px;
+}
+
+.landing-page {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+}
+
+.slick-slide {
+  transition: transform 0.3s ease; /* Điều chỉnh tốc độ chuyển đổi */
+  border-bottom: 20px;
+}
+
+.slick-slide:focus {
+  outline: none;
+}
+
+:focus {
+  outline: none;
+}
+
+.messenger-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 0px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.messenger-icon {
+  width: 70px; /* Kích thước của biểu tượng Messenger */
+  height: 70px; /* Kích thước của biểu tượng Messenger */
+}
+
+.main-title {
+  text-align: center;
+}
+
+.main-title h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 2000;
+  font-size: 5rem;
+  color: #333;
+  /* margin-top: 0px; */
+}
+
+.navbar-brand h1 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.logoText {
+  color: cadetblue;
+}
+
+.destination-list {
+  margin-top: 30px;
+}
+
+.destination-list h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white;
+  /* padding-left: 10%; */
+}
+
+.destination-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.destination-item {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+}
+
+.destination-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.destination-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.destination-list {
+  background-image: url("D:\FPT UNIVERSITY\CN7\SDN301m\Travelix\frontend\public\images\backgroundLandingPage.jpg");
+  background-size: cover;
+  margin-top: 30px;
+  background-color: cadetblue; /* Màu nền cho phần Popular Destinations */
+  color: #fff; /* Màu chữ */
+  padding: 20px; /* Khoảng cách lề bên trong */
+  border-radius: 50px; /* Bo góc */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  box-sizing: border-box; /* Đảm bảo tính toàn vẹn của padding */
+  text-align: center;
+}
+
+.destination-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff; /* Màu chữ cho tiêu đề */
+}
+
+.destination-list button {
+  background-color: #fd7e14;
+  border-radius: 10px;
+  width: 30%;
+  height: 50px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.destination-list .destination-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.destination-list .destination-item {
+  background-color: #fff; /* Màu nền của mỗi ô điểm đến */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.destination-list .destination-item:hover {
+  transform: translateY(-5px); /* Dịch chuyển lên khi hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Đổ bóng mạnh hơn khi hover */
+}
+
+.destination-list .destination-item h3 {
+  font-size: 1.5rem;
+  color: #333; /* Màu chữ cho tiêu đề mỗi ô điểm đến */
+  margin-bottom: 10px;
+}
+
+.destination-list .destination-item p {
+  font-size: 1rem;
+  color: #666; /* Màu chữ cho nội dung mỗi ô điểm đến */
+}
+
+/* ------------------ */
+.hotel-list {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.hotel-list h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white;
+  /* padding-left: 10%; */
+}
+
+.hotel-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.hotel-item {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+}
+
+.hotel-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hotel-item h4 {
+  color: black;
+}
+
+.hotel-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.hotel-list {
+  background-image: url("D:\FPT UNIVERSITY\CN7\SDN301m\Travelix\frontend\public\images\backgroundHotel.jpg");
+  background-size: cover;
+  margin-top: 30px;
+  background-color: cadetblue; /* Màu nền cho phần Popular Destinations */
+  color: #fff; /* Màu chữ */
+  padding: 20px; /* Khoảng cách lề bên trong */
+  border-radius: 50px; /* Bo góc */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  box-sizing: border-box; /* Đảm bảo tính toàn vẹn của padding */
+}
+
+.hotel-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff; /* Màu chữ cho tiêu đề */
+}
+
+.hotel-list .hotel-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hotel-list .hotel-item {
+  background-color: #fff; /* Màu nền của mỗi ô điểm đến */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.hotel-list .hotel-item:hover {
+  transform: translateY(-5px); /* Dịch chuyển lên khi hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Đổ bóng mạnh hơn khi hover */
+}
+
+.hotel-list .hotel-item h3 {
+  font-size: 1.5rem;
+  color: #333; /* Màu chữ cho tiêu đề mỗi ô điểm đến */
+  margin-bottom: 10px;
+}
+
+.hotel-list .hotel-item p {
+  font-size: 1rem;
+  color: #666; /* Màu chữ cho nội dung mỗi ô điểm đến */
+}
+
+.buttonCSS {
+  padding-top: 20px;
+}
+
+.hotel-list button {
+  background-color: #fd7e14;
+  border-radius: 10px;
+  width: 30%;
+  height: 50px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+  min-width: 200px; /* Minimum width for better alignment on small screens */
+}
+
+.footer-section.contact {
+  flex: 2; /* Make the Contact Us section wider */
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #222;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.social img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social img:hover {
+  transform: scale(1.2);
+}
+
+.btn-login {
+  border: solid;
+}
+
+.search-book{
+  font-size: 10px;
+}
+
+.search-book {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
