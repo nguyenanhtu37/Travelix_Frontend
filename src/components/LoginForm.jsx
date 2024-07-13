@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 import Slider from 'react-slick';
 import '../CSS/style.css';
 
@@ -8,6 +9,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  // const history = useHistory();
 
   const settings = {
     infinite: true,
@@ -30,15 +32,35 @@ const LoginForm = () => {
       });
 
       if (response.status === 200) {
+
         alert('Login successful!');
         localStorage.setItem('token', response.data.token); // Lưu token vào localStorage
-        navigate('/homepageuser');
+
+        const role = decodeToken(response.data.token).role;
+        if (role === 'admin') {
+          // history.push('/admin');
+          navigate('/admin');
+        } else if (role === 'user') {
+          navigate('/homepageuser');
+        } else {
+          alert('Unknown role')
+        }
       } else {
         alert('Invalid username or password');
       }
     } catch (error) {
       console.error('Error logging in:', error);
       alert('Error logging in');
+    }
+  };
+
+  const decodeToken = (token) => {
+    try {
+      const decoded = jwtDecode(token);
+      return decoded;
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return {};
     }
   };
 

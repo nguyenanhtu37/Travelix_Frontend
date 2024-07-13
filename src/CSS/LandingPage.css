@@ -209,7 +209,7 @@
 }
 
 .destination-list {
-  background-image: url("D:\FPT UNIVERSITY\CN7\SDN301m\Travelix\frontend\public\images\backgroundLandingPage.jpg");
+  background-image: url("");
   background-size: cover;
   margin-top: 30px;
   background-color: cadetblue; /* Màu nền cho phần Popular Destinations */
@@ -312,7 +312,7 @@
 }
 
 .hotel-list {
-  background-image: url("D:\FPT UNIVERSITY\CN7\SDN301m\Travelix\frontend\public\images\backgroundHotel.jpg");
+  background-image: url("../../public/images/backgroundHotel.jpg");
   background-size: cover;
   margin-top: 30px;
   background-color: cadetblue; /* Màu nền cho phần Popular Destinations */

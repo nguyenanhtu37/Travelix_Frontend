@@ -9,6 +9,13 @@ const OTPForm = () => {
   const { username, name, password, confirmpassword, phone } = location.state || {};
 
   const handleVerifyOtp = async () => {
+    console.log('Username:', username);
+    console.log('OTP:', otp);
+    console.log('Name:', name);
+    console.log('Password:', password);
+    console.log('Confirm Password:', confirmpassword);
+    console.log('Phone:', phone);
+
     try {
       const response = await axios.post('http://localhost:5000/api/users/verify-otp', {
         username,
