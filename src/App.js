@@ -8,10 +8,11 @@ import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import HomePageUser from './components/HomePageUser';
-import AdminDashboard from './components/AdminDashBoard';
-import ManageFlight from './components/ManageFlight';
-import AddFlight from './components/AddFlight';
+import AdminDashboard from './pages/AdminPage/AdminDashBoard';
+import ListUsers from './pages/ListUsers/ListUsers';
+import ListFlights from './pages/ListFlights/ListFlights';
 import EditFlight from './components/EditFlight';
+import AddNewFlight from './pages/AddNewFlight/AddNewFlight';
 
 const App = () => {
   return (
@@ -26,9 +27,10 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path='/homepageuser' element={<HomePageUser />} />
-          <Route path='/manageflight' element={<ManageFlight />} />
-          <Route path='/addflight' element={<AddFlight />} />
-          <Route path="/edit/:id" element={<EditFlight />} />
+          <Route path='/manageflight' element={<ListFlights />} />
+          <Route path='/addflight' element={<AddNewFlight />} />
+          <Route path='/:id' element={<EditFlight />} />
+          <Route path='/listusers' element={<ListUsers />} />
 
           <Route
             path="/protected-route"

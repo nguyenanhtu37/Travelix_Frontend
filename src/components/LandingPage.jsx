@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../CSS/LandingPage.css';
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../CSS/LandingPage.css";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const LandingPage = () => {
   const [destinations, setDestinations] = useState([]);
@@ -22,22 +22,24 @@ const LandingPage = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/destinations')
-      .then(response => {
+    axios
+      .get("http://localhost:5000/api/destinations")
+      .then((response) => {
         setDestinations(response.data);
       })
-      .catch(error => {
-        console.error('Error fetching destinations:', error);
+      .catch((error) => {
+        console.error("Error fetching destinations:", error);
       });
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/hotels')
-      .then(response => {
+    axios
+      .get("http://localhost:5000/api/hotels")
+      .then((response) => {
         setHotels(response.data);
       })
-      .catch(error => {
-        console.error('Error fetching hotels:', error);
+      .catch((error) => {
+        console.error("Error fetching hotels:", error);
       });
   }, []);
 
@@ -54,31 +56,49 @@ const LandingPage = () => {
                 <Link to="/" className="nav-link">Home</Link>
               </li> */}
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Destinations & Trips</Link>
+                <Link to="/login" className="nav-link">
+                  Destinations & Trips
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Car Rentals</Link>
+                <Link to="/login" className="nav-link">
+                  Car Rentals
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Flights</Link>
+                <Link to="/login" className="nav-link">
+                  Flights
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Hotels</Link>
+                <Link to="/login" className="nav-link">
+                  Hotels
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Activities</Link>
+                <Link to="/login" className="nav-link">
+                  Activities
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About</Link>
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact</Link>
+                <Link to="/contact" className="nav-link">
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
           <div className="auth-buttons">
-            <Link to="/login" className="btn btn-login">Login</Link>
-            <Link to="/signup" className="btn btn-secondary">Sign up</Link>
+            <Link to="/login" className="btn btn-login">
+              Login
+            </Link>
+            <Link to="/signup" className="btn btn-secondary">
+              Sign up
+            </Link>
           </div>
         </div>
         <div className="header-content">
@@ -117,8 +137,10 @@ const LandingPage = () => {
         </div>
       </header>
       <main className="main-content">
-        <div className='main-title'>
-          <h1>Explorer the world with <span className='logoText'>Travelix</span></h1>
+        <div className="main-title">
+          <h1>
+            Explorer the world with <span className="logoText">Travelix</span>
+          </h1>
         </div>
         <div className="destination-list">
           <h1>Popular Destinations</h1>
@@ -130,14 +152,14 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-          <div className='buttonCSS'>
-            <Link to='/login'>
+          <div className="buttonCSS">
+            <Link to="/login">
               <button>Login to see more</button>
             </Link>
           </div>
         </div>
 
-        <div className='main-title'>
+        <div className="main-title">
           <h1>Best deals ever! Hurry up before they're gone!</h1>
         </div>
 
@@ -152,7 +174,7 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-          <div className='buttonCSS'>
+          <div className="buttonCSS">
             <button>Book now</button>
           </div>
         </div>
@@ -161,15 +183,26 @@ const LandingPage = () => {
         <div className="footer-content">
           <div className="footer-section about">
             <h3>About Travelix</h3>
-            <p>Explore the world with Travelix, your trusted partner in discovering the best destinations and experiences.</p>
+            <p>
+              Explore the world with Travelix, your trusted partner in
+              discovering the best destinations and experiences.
+            </p>
           </div>
           <div className="footer-section links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/destinations">Destinations</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/destinations">Destinations</a>
+              </li>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
             </ul>
           </div>
           <div className="footer-section contact">
@@ -180,9 +213,15 @@ const LandingPage = () => {
           </div>
           <div className="footer-section social">
             <h3>Follow Us</h3>
-            <a href="#"><img src="/images/amz.png" alt="Facebook"></img></a>
-            <a href="#"><img src="/images/twitter.png" alt="Twitter"></img></a>
-            <a href="#"><img src="/images/ig.png" alt="Instagram"></img></a>
+            <a href="#">
+              <img src="/images/amz.png" alt="Facebook"></img>
+            </a>
+            <a href="#">
+              <img src="/images/twitter.png" alt="Twitter"></img>
+            </a>
+            <a href="#">
+              <img src="/images/ig.png" alt="Instagram"></img>
+            </a>
           </div>
         </div>
         <div className="footer-bottom">
@@ -190,10 +229,16 @@ const LandingPage = () => {
         </div>
       </footer>
 
-
-
-      <a href="https://m.me/357364224127841" target="_blank" className="messenger-button">
-        <img src="images/messenger.png" alt="Messenger" className="messenger-icon"></img>
+      <a
+        href="https://m.me/357364224127841"
+        target="_blank"
+        className="messenger-button"
+      >
+        <img
+          src="images/messenger.png"
+          alt="Messenger"
+          className="messenger-icon"
+        ></img>
       </a>
     </div>
   );

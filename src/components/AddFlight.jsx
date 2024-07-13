@@ -10,7 +10,8 @@ const AddFlight = () => {
         departureDate: '',
         returnDate: '',
         numEconomyPassengers: 0,
-        numBusinessPassengers: 0
+        numBusinessPassengers: 0,
+        price: ''
     });
     const navigate = useNavigate();
 
@@ -83,6 +84,10 @@ const AddFlight = () => {
                 <label>
                     Number of Business Passengers:
                     <input type="number" name="numBusinessPassengers" value={formData.numBusinessPassengers} onChange={handleChange} required />
+                </label>
+                <label>
+                    Price:
+                    <input type="text" name="price" value={formData.price} onChange={handleChange} required />
                 </label>
                 <br />
                 <button type="submit">Add Flight</button>
