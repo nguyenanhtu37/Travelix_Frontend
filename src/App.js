@@ -9,6 +9,9 @@ import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import HomePageUser from './components/HomePageUser';
 import AdminDashboard from './components/AdminDashBoard';
+import ManageFlight from './components/ManageFlight';
+import AddFlight from './components/AddFlight';
+import EditFlight from './components/EditFlight';
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path='/homepageuser' element={<HomePageUser />} />
+          <Route path='/manageflight' element={<ManageFlight />} />
+          <Route path='/addflight' element={<AddFlight />} />
+          <Route path="/edit/:id" element={<EditFlight />} />
 
           <Route
             path="/protected-route"
