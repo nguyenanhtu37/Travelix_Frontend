@@ -11,7 +11,7 @@ import HomePageUser from './components/HomePageUser';
 import AdminDashboard from './pages/AdminPage/AdminDashBoard';
 import ListUsers from './pages/ListUsers/ListUsers';
 import ListFlights from './pages/ListFlights/ListFlights';
-import EditFlight from './components/EditFlight';
+import EditFlight from './pages/EditFlightPage/EditFlight';
 import AddNewFlight from './pages/AddNewFlight/AddNewFlight';
 
 const App = () => {
