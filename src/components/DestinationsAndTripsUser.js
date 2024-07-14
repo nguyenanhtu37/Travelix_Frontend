@@ -1,35 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import '../CSS/LandingPage.css';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import '../CSS/ForgotPassword.css'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
+const LandingPage = () => {
+  const [destinations, setDestinations] = useState([]);
+  const [hotels, setHotels] = useState([]);
 
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    adaptiveHeight: true,
-  };
-
-  const handleForgotPassword = async () => {
-    try {
-      const response = await axios.post('http://localhost:5000/api/users/forgot-password', { email });
-      alert('A reset link has been sent to your email address');
-    } catch (error) {
-      console.error('Error sending reset link:', error);
-      alert('Error sending reset link');
-    }
-  };
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/destinations')
+      .then(response => {
+        setDestinations(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching destinations:', error);
+      });
+  }, []);
 
   return (
-    <div>
+    <div className="landing-page">
       <header className="header">
         <div className="navbar">
           <Link to="/" className="navbar-brand">
@@ -37,8 +29,11 @@ const ForgotPassword = () => {
           </Link>
           <nav className="navbar-nav">
             <ul className="nav">
+              {/* <li className="nav-item">
+                <Link to="/" className="nav-link">Home</Link>
+              </li> */}
               <li className="nav-item">
-                <Link to="/destinationsandtripuser" className="nav-link">Destinations & Trips</Link>
+                <Link to="#" className="nav-link">Destinations & Trips</Link>
               </li>
               <li className="nav-item">
                 <Link to="/cars" className="nav-link">Car Rentals</Link>
@@ -66,58 +61,50 @@ const ForgotPassword = () => {
           </div>
         </div>
         <div className="header-content">
-          <Slider {...settings}>
-            <div>
-              <img src="/images/carousel1.jpg" alt="Slide 1" />
-            </div>
-            <div>
-              <img src="/images/carousel2.jpg" alt="Slide 2" />
-            </div>
-            <div>
-              <img src="/images/carousel3.jpg" alt="Slide 3" />
-            </div>
-            <div>
-              <img src="/images/carousel4.jpg" alt="Slide 4" />
-            </div>
-            <div>
-              <img src="/images/carousel5.jpg" alt="Slide 5" />
-            </div>
-            <div>
-              <img src="/images/carousel6.jpg" alt="Slide 6" />
-            </div>
-            <div>
-              <img src="/images/carousel7.jpg" alt="Slide 7" />
-            </div>
-            <div>
-              <img src="/images/carousel8.jpg" alt="Slide 8" />
-            </div>
-            <div>
-              <img src="/images/carousel9.jpg" alt="Slide 9" />
-            </div>
-            <div>
-              <img src="/images/carousel10.jpg" alt="Slide 10" />
-            </div>
-          </Slider>
+          
         </div>
       </header>
+      <main className="main-content">
+        <div className='main-title'>
+          <h1>List of Destinations and Trips</h1>
+        </div>
+        <div className="destination-list">
+          {/* <h1>Popular Destinations</h1> */}
+          <div className="destination-items">
+            {destinations.map((destination, index) => (
+              <div key={index} className="destination-item">
+                <h3>{destination.name}</h3>
+                <p>{destination.description}</p>
+              </div>
+            ))}
+          </div>
+          {/* <div className='buttonCSS'>
+            <Link to='/login'>
+              <button>Login to see more</button>
+            </Link>
+          </div> */}
+        </div>
 
-      <div className='forgot-form'>
-        <h1>Forgot Password</h1>
-        <p>We will sent a reset link via email. Check it out</p>
-        <form onSubmit={(e) => { e.preventDefault(); handleForgotPassword(); }}>
-          <label>
-            Enter your mail address:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </label>
-          <button type="submit">Send Reset Link</button>
-        </form>
-      </div>
+        {/* <div className='main-title'>
+          <h1>Best deals ever! Hurry up before they're gone!</h1>
+        </div> */}
 
+        {/* <div className="hotel-list">
+          <h1>Popular Hotels</h1>
+          <div className="hotel-items">
+            {hotels.map((hotel, index) => (
+              <div key={index} className="hotel-item">
+                <h3>{hotel.name}</h3>
+                <h4>{hotel.location}</h4>
+                <p>{hotel.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className='buttonCSS'>
+            <button>Book now</button>
+          </div>
+        </div>*/}
+      </main> 
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section about">
@@ -151,6 +138,8 @@ const ForgotPassword = () => {
         </div>
       </footer>
 
+
+
       <a href="https://m.me/357364224127841" target="_blank" className="messenger-button">
         <img src="images/messenger.png" alt="Messenger" className="messenger-icon"></img>
       </a>
@@ -158,4 +147,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default LandingPage;

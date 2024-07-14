@@ -37,3 +37,7 @@
   }
 }
 
+.App {
+  position: relative;
+  overflow: hidden;
+}

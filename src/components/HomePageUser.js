@@ -57,7 +57,7 @@ const HomePageUser = () => {
         <div className="landing-page">
             <header className="header">
                 <div className="navbar">
-                    <Link to="/" className="navbar-brand">
+                    <Link to="#" className="navbar-brand">
                         <h1>Travelix</h1>
                     </Link>
                     <nav className="navbar-nav">

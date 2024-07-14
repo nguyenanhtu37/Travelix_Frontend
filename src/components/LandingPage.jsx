@@ -54,19 +54,19 @@ const LandingPage = () => {
                 <Link to="/" className="nav-link">Home</Link>
               </li> */}
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Destinations & Trips</Link>
+                <Link to="/destinationsandtripuser" className="nav-link">Destinations & Trips</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Car Rentals</Link>
+                <Link to="/cars" className="nav-link">Car Rentals</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Flights</Link>
+                <Link to="/flights" className="nav-link">Flights</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Hotels</Link>
+                <Link to="/hotels" className="nav-link">Hotels</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Activities</Link>
+                <Link to="/activities" className="nav-link">Activities</Link>
               </li>
               <li className="nav-item">
                 <Link to="/about" className="nav-link">About</Link>
@@ -131,8 +131,8 @@ const LandingPage = () => {
             ))}
           </div>
           <div className='buttonCSS'>
-            <Link to='/login'>
-              <button>Login to see more</button>
+            <Link to='/destinationsandtripuser'>
+              <button>See all destinations</button>
             </Link>
           </div>
         </div>
@@ -152,8 +152,10 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-          <div className='buttonCSS'>
-            <button>Book now</button>
+          <div className='buttonCSSS'>
+            <Link to='/destinationsandtripuser'>
+              <button>See all hotels</button>
+            </Link>
           </div>
         </div>
       </main>

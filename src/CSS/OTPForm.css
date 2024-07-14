@@ -1,0 +1,53 @@
+.OTP-content {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .OTP-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .OTP-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .OTP-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .OTP-content label {
+    margin-bottom: 10px;
+  }
+  
+  .OTP-content input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .OTP-content button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: cadetblue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .OTP-content button[type="submit"]:hover {
+    background-color: chocolate;
+  }

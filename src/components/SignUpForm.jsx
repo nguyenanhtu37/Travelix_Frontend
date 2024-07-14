@@ -63,19 +63,19 @@ const SignUpForm = () => {
           <nav className="navbar-nav">
             <ul className="nav">
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Destinations & Trips</Link>
+                <Link to="/destinationsandtripuser" className="nav-link">Destinations & Trips</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Car Rentals</Link>
+                <Link to="/cars" className="nav-link">Car Rentals</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Flights</Link>
+                <Link to="/flights" className="nav-link">Flights</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Cuises</Link>
+                <Link to="/hotels" className="nav-link">Hotels</Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Activities</Link>
+                <Link to="/activities" className="nav-link">Activities</Link>
               </li>
               <li className="nav-item">
                 <Link to="/about" className="nav-link">About</Link>
