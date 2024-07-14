@@ -14,6 +14,11 @@ import CreateDestination from './components/CreateDestination';
 import DestinationsAndTrips from './components/DestinationsAndTrips';
 import DestinationsAndTripsUser from './components/DestinationsAndTripsUser';
 import UpdateDestination from './components/UpdateDestination';
+import AdminDashboard from './pages/AdminPage/AdminDashBoard';
+import ListUsers from './pages/ListUsers/ListUsers';
+import ListFlights from './pages/ListFlights/ListFlights';
+import EditFlight from './pages/EditFlightPage/EditFlight';
+import AddNewFlight from './pages/AddNewFlight/AddNewFlight';
 
 const App = () => {
   return (
@@ -33,6 +38,10 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path='/homepageuser' element={<HomePageUser />} />
+          <Route path='/manageflight' element={<ListFlights />} />
+          <Route path='/addflight' element={<AddNewFlight />} />
+          <Route path='/:id' element={<EditFlight />} />
+          <Route path='/listusers' element={<ListUsers />} />
 
           <Route
             path="/protected-route"

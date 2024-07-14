@@ -1,0 +1,22 @@
+.userTable{
+    height: 600px;
+    padding: 20px;
+
+    .cellAction{
+        display: flex;
+        align-items: center;
+        height: 50px;
+        .viewButton{
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: darkblue;
+            border: 1px dotted rgba(0, 0, 139, 0.596);
+            cursor: pointer;
+            width: 50%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
