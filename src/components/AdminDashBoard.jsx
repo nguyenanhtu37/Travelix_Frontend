@@ -12,7 +12,6 @@ const AdminDashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Hàm để lấy tổng số người dùng từ API backend
         const fetchUserCount = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/api/users/count');
@@ -23,7 +22,7 @@ const AdminDashboard = () => {
         };
 
         fetchUserCount();
-    }, []); // Chạy chỉ một lần khi thành phần được mount
+    }, []); // Chạy 1 lần
 
     useEffect(() => {
         const fetchDestinationCount = async () => {
@@ -36,7 +35,7 @@ const AdminDashboard = () => {
         };
 
         fetchDestinationCount();
-    }, []); // Chạy chỉ một lần khi thành phần được mount
+    }, []); 
 
     const handleCreateDestination = () => {
         navigate('/admin/destinations/create');

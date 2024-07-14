@@ -8,7 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import HomePageUser from './components/HomePageUser';
-import AdminDashboard from './components/AdminDashBoard';
+// import AdminDashboard from './components/AdminDashBoard';
 import AddDetail from './components/AddDetail';
 import CreateDestination from './components/CreateDestination';
 import DestinationsAndTrips from './components/DestinationsAndTrips';
