@@ -4,6 +4,8 @@ import axios from "axios";
 import "./EditFlight.scss";
 import success from "../../assets/images/404-tick.png";
 import { Link } from "react-router-dom";
+import SideBar from "../../components/SideBar/SideBar";
+import NavBar from "../../components/NavBarAdmin/NavBar";
 
 const UpdateFlight = () => {
   const { id } = useParams();
@@ -71,7 +73,9 @@ const UpdateFlight = () => {
 
   return (
     <div className="update">
+      <SideBar />
       <div className="updateContainer">
+        <NavBar />
         <div className="top">
           <h1 className="back">Update Flight</h1>
           <Link className="right" to="/manageFlight">
@@ -89,6 +93,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>To</label>
               <input
@@ -98,6 +103,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Branch</label>
               <input
@@ -107,6 +113,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Departure Date</label>
               <input
@@ -116,6 +123,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Price of Adult (Economy)</label>
               <input
@@ -125,6 +133,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Price of Children (Economy)</label>
               <input
@@ -134,6 +143,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Price of Adult (Business)</label>
               <input
@@ -143,6 +153,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <div className="formInput">
               <label>Price of Children (Business)</label>
               <input
@@ -152,6 +163,7 @@ const UpdateFlight = () => {
                 onChange={handleChange}
               />
             </div>
+            <br />
             <button type="submit" className="submitBtn">
               Update Flight
             </button>

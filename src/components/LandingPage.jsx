@@ -56,19 +56,29 @@ const LandingPage = () => {
                 <Link to="/" className="nav-link">Home</Link>
               </li> */}
               <li className="nav-item">
-              <Link to="/destinationsandtripuser" className="nav-link">Destinations & Trips</Link>
+                <Link to="/destinationsandtripuser" className="nav-link">
+                  Destinations & Trips
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cars" className="nav-link">Car Rentals</Link>
+                <Link to="/cars" className="nav-link">
+                  Car Rentals
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/flights" className="nav-link">Flights</Link>
+                <Link to="/searchflight" className="nav-link">
+                  Flights
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/hotels" className="nav-link">Hotels</Link>
+                <Link to="/hotels" className="nav-link">
+                  Hotels
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/activities" className="nav-link">Activities</Link>
+                <Link to="/activities" className="nav-link">
+                  Activities
+                </Link>
               </li>
               <li className="nav-item">
                 <Link to="/about" className="nav-link">
@@ -142,8 +152,8 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-          <div className='buttonCSS'>
-            <Link to='/destinationsandtripuser'>
+          <div className="buttonCSS">
+            <Link to="/destinationsandtripuser">
               <button>See all destinations</button>
             </Link>
           </div>
@@ -164,8 +174,8 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-          <div className='buttonCSSS'>
-            <Link to='/destinationsandtripuser'>
+          <div className="buttonCSSS">
+            <Link to="/destinationsandtripuser">
               <button>See all hotels</button>
             </Link>
           </div>

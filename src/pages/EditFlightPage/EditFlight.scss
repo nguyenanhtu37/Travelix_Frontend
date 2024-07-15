@@ -3,9 +3,9 @@
     width: 100%;
 
     .updateContainer{
-        width: 70%;
         display: flex;
         flex-direction: column;
+        flex: 6;
 
         .top,
             .bottom {

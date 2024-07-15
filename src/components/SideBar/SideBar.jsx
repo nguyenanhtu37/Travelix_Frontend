@@ -57,6 +57,12 @@ const SideBar = () => {
               <span>Destinations</span>
             </Link>
           </li>
+          <li>
+            <Link to="/listorderflight" className="link">
+              <TourOutlinedIcon className="icon" />
+              <span>Order Flight</span>
+            </Link>
+          </li>
           <p className="title">Add Items</p>
           <li>
             <Link to="/addflight" className="link">

@@ -19,6 +19,15 @@ import ListUsers from './pages/ListUsers/ListUsers';
 import ListFlights from './pages/ListFlights/ListFlights';
 import EditFlight from './pages/EditFlightPage/EditFlight';
 import AddNewFlight from './pages/AddNewFlight/AddNewFlight';
+import SearchFlight from './pages/SearchFlight/SearchFlight';
+import ListFlightsSearch from './pages/ListFlightsSerach/ListFlightsSearch';
+import ChooseFlight from './pages/ChooseFlight/ChooseFlight';
+import OrderForm from './pages/OrderFlight/OrderFlight';
+import OrderFlightDetail from './pages/OrderFlightDetail/OrderFlightDetail';
+import PaymentFlight from './pages/PaymentFlight/PaymentFlight';
+import PaymentFlightSuccess from './pages/PaymentFlightSuccess/PaymentFlightSuccess';
+import ListOrderFlight from './pages/ListOrderFlight/ListOrderFlight';
+import OrderFlightDetailAdnin from './pages/OrderFlightDetailAdmin/OrderFlightDetailAdmin';
 
 const App = () => {
   return (
@@ -41,7 +50,16 @@ const App = () => {
           <Route path='/manageflight' element={<ListFlights />} />
           <Route path='/addflight' element={<AddNewFlight />} />
           <Route path='/:id' element={<EditFlight />} />
+          <Route path='/choose/:id' element={<ChooseFlight />} />
           <Route path='/listusers' element={<ListUsers />} />
+          <Route path='/searchflight' element={<SearchFlight />} />
+          <Route path='/listflightssearch' element={<ListFlightsSearch />} />
+          <Route path='/orderflight' element={<OrderForm />} />
+          <Route path='/orderflightdetail' element={<OrderFlightDetail />} />
+          <Route path='/paymentflight' element={<PaymentFlight />} />
+          <Route path='/paymentflightsuccess' element={<PaymentFlightSuccess />} />
+          <Route path='/listorderflight' element={<ListOrderFlight />} />
+          <Route path='/orderflightdetailadmin/:id' element={<OrderFlightDetailAdnin />} />
 
           <Route
             path="/protected-route"

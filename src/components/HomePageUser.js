@@ -72,7 +72,7 @@ const HomePageUser = () => {
                                 <Link to="/carrentals" className="nav-link">Car Rentals</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/flights" className="nav-link">Flights</Link>
+                                <Link to="/searchflight" className="nav-link">Flights</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/cuises" className="nav-link">Hotels</Link>
