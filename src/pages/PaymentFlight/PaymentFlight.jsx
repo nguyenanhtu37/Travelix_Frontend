@@ -22,6 +22,15 @@ const PaymentFlight = () => {
 
       console.log("Order after payment update:", order);
 
+      // Send email
+      await axios.post(
+        "http://localhost:5000/api/orderflight/sendPaymentSuccessEmail",
+        {
+          email: order.contactInfo.email,
+          orderDetails: order,
+        }
+      );
+
       // Điều hướng tới trang thanh toán thành công
       navigate("/paymentflightsuccess", { state: { order } });
     } catch (error) {
@@ -38,9 +47,6 @@ const PaymentFlight = () => {
           </Link>
           <nav className="navbar-nav">
             <ul className="nav">
-              {/* <li className="nav-item">
-                <Link to="/" className="nav-link">Home</Link>
-              </li> */}
               <li className="nav-item">
                 <Link to="/destinationsandtripuser" className="nav-link">
                   Destinations & Trips

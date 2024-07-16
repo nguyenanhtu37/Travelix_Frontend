@@ -1,3 +1,21 @@
 .table{
-    
+    .tableContainer{
+        .tableHead{
+            .tableRow{
+                .tableCell{
+                    width: 25%;
+                    text-align: center;
+                }
+            }
+        }
+
+                .tableBody {
+                    .tableRow {
+                        .tableCell {
+                            width: 25%;
+                            text-align: center;
+                        }
+                    }
+                }
+    }
 }

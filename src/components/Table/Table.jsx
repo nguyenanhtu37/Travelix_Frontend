@@ -16,7 +16,7 @@ const TableComponent = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/users/getall"
+          "http://localhost:5000/api/orderflight/"
         );
         setUsers(response.data);
       } catch (error) {
@@ -26,30 +26,50 @@ const TableComponent = () => {
 
     fetchUsers();
   }, []);
+
+  const getStatusClass = (status) => {
+    switch (status) {
+      case "create":
+        return "status-create";
+      case "pending":
+        return "status-pending";
+      case "Paid":
+        return "status-paid";
+      default:
+        return "";
+    }
+  };
+
   return (
     <TableContainer component={Paper} className="table">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>ID User</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">UserName</TableCell>
-            <TableCell align="right">Password</TableCell>
-            <TableCell align="right">Phone</TableCell>
-            <TableCell align="right">Role</TableCell>
-            <TableCell align="right">Status</TableCell>
+      <Table
+        sx={{ minWidth: 650 }}
+        aria-label="simple table"
+        className="tableContainer"
+      >
+        <TableHead className="tableHead">
+          <TableRow className="tableRow">
+            <TableCell className="tableCell">ID Order Flight</TableCell>
+            <TableCell align="right" className="tableCell">
+              Total Price
+            </TableCell>
+            <TableCell align="right" className="tableCell">
+              Status
+            </TableCell>
+            <TableCell align="right" className="tableCell">
+              Create At
+            </TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody className="tableBody">
           {users.map((row) => (
-            <TableRow key={row._id}>
+            <TableRow key={row._id} className="tableRow">
               <TableCell className="tableCell">{row._id}</TableCell>
-              <TableCell className="tableCell">{row.name}</TableCell>
-              <TableCell className="tableCell">{row.username}</TableCell>
-              <TableCell className="tableCell">{row.password}</TableCell>
-              <TableCell className="tableCell">{row.phone}</TableCell>
-              <TableCell className="tableCell">{row.role}</TableCell>
-              <TableCell className="tableCell">Active</TableCell>
+              <TableCell className="tableCell">{row.totalPrice}</TableCell>
+              <TableCell className="tableCell">
+                {row.status.toUpperCase()}
+              </TableCell>
+              <TableCell className="tableCell">{row.createdAt}</TableCell>
             </TableRow>
           ))}
         </TableBody>
