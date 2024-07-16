@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import Slider from 'react-slick';
-import '../CSS/style.css';
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import Slider from "react-slick";
+import "../CSS/style.css";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  // const history = useHistory();
 
   const settings = {
     infinite: true,
@@ -24,21 +26,43 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/users/login",
+        {
+          username,
+          password,
+        }
+      );
 
       if (response.status === 200) {
-        alert('Login successful!');
-        localStorage.setItem('token', response.data.token); // Lưu token vào localStorage
-        navigate('/homepageuser');
+        alert("Login successful!");
+        localStorage.setItem("token", response.data.token); // Lưu token vào localStorage
+
+        const role = decodeToken(response.data.token).role;
+        if (role === "admin") {
+          // history.push('/admin');
+          navigate("/admin");
+        } else if (role === "user") {
+          navigate("/homepageuser");
+        } else {
+          alert("Unknown role");
+        }
       } else {
-        alert('Invalid username or password');
+        alert("Invalid username or password");
       }
     } catch (error) {
-      console.error('Error logging in:', error);
-      alert('Error logging in');
+      console.error("Error logging in:", error);
+      alert("Error logging in");
+    }
+  };
+
+  const decodeToken = (token) => {
+    try {
+      const decoded = jwtDecode(token);
+      return decoded;
+    } catch (error) {
+      console.error("Error decoding token:", error);
+      return {};
     }
   };
 
@@ -52,31 +76,49 @@ const LoginForm = () => {
           <nav className="navbar-nav">
             <ul className="nav">
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Destinations & Trips</Link>
+                <Link to="/destinationsandtripuser" className="nav-link">
+                  Destinations & Trips
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Car Rentals</Link>
+                <Link to="/cars" className="nav-link">
+                  Car Rentals
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Flights</Link>
+                <Link to="/searchflight" className="nav-link">
+                  Flights
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Cuises</Link>
+                <Link to="/hotels" className="nav-link">
+                  Hotels
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link">Activities</Link>
+                <Link to="/activities" className="nav-link">
+                  Activities
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About</Link>
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact</Link>
+                <Link to="/contact" className="nav-link">
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
           <div className="auth-buttons">
-            <Link to="/login" className="btn btn-login">Login</Link>
-            <Link to="/signup" className="btn btn-secondary">Sign up</Link>
+            <Link to="/login" className="btn btn-login">
+              Login
+            </Link>
+            <Link to="/signup" className="btn btn-secondary">
+              Sign up
+            </Link>
           </div>
         </div>
         <div className="header-content">
@@ -116,49 +158,60 @@ const LoginForm = () => {
       </header>
       <div className="form-container">
         <h1>Login to Travelix</h1>
-        <form onSubmit={(handleLogin)} >
+        <form onSubmit={handleLogin}>
           <div className="form-content">
             <label>
               Email address:
               <input
-                className='form-items'
+                className="form-items"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                placeholder='Enter your email address:'
+                placeholder="Enter your email address:"
               />
             </label>
             <label>
               Password:
               <input
-                className='form-items'
+                className="form-items"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                placeholder='Enter your password'
+                placeholder="Enter your password"
               />
             </label>
           </div>
           <button type="submit">Login</button>
         </form>
-        <Link to='/forgot-password'>Forgot Password?</Link>
+        <Link to="/forgot-password">Forgot Password?</Link>
       </div>
 
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section about">
             <h3>About Travelix</h3>
-            <p>Explore the world with Travelix, your trusted partner in discovering the best destinations and experiences.</p>
+            <p>
+              Explore the world with Travelix, your trusted partner in
+              discovering the best destinations and experiences.
+            </p>
           </div>
           <div className="footer-section links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/destinations">Destinations</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/destinations">Destinations</a>
+              </li>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
             </ul>
           </div>
           <div className="footer-section contact">
@@ -169,9 +222,15 @@ const LoginForm = () => {
           </div>
           <div className="footer-section social">
             <h3>Follow Us</h3>
-            <a href="#"><img src="/images/amz.png" alt="Facebook"></img></a>
-            <a href="#"><img src="/images/twitter.png" alt="Twitter"></img></a>
-            <a href="#"><img src="/images/ig.png" alt="Instagram"></img></a>
+            <a href="#">
+              <img src="/images/amz.png" alt="Facebook"></img>
+            </a>
+            <a href="#">
+              <img src="/images/twitter.png" alt="Twitter"></img>
+            </a>
+            <a href="#">
+              <img src="/images/ig.png" alt="Instagram"></img>
+            </a>
           </div>
         </div>
         <div className="footer-bottom">
@@ -179,8 +238,16 @@ const LoginForm = () => {
         </div>
       </footer>
 
-      <a href="https://m.me/357364224127841" target="_blank" className="messenger-button">
-        <img src="images/messenger.png" alt="Messenger" className="messenger-icon"></img>
+      <a
+        href="https://m.me/357364224127841"
+        target="_blank"
+        className="messenger-button"
+      >
+        <img
+          src="images/messenger.png"
+          alt="Messenger"
+          className="messenger-icon"
+        ></img>
       </a>
     </div>
   );

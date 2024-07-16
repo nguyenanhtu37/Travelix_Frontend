@@ -57,7 +57,7 @@ const HomePageUser = () => {
         <div className="landing-page">
             <header className="header">
                 <div className="navbar">
-                    <Link to="/" className="navbar-brand">
+                    <Link to="#" className="navbar-brand">
                         <h1>Travelix</h1>
                     </Link>
                     <nav className="navbar-nav">
@@ -72,7 +72,7 @@ const HomePageUser = () => {
                                 <Link to="/carrentals" className="nav-link">Car Rentals</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/flights" className="nav-link">Flights</Link>
+                                <Link to="/searchflight" className="nav-link">Flights</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/cuises" className="nav-link">Hotels</Link>

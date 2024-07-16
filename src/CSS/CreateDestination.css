@@ -1,0 +1,54 @@
+.formcontent {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 50vh;
+  }
+
+  .formcontent h1 {
+    color: cadetblue;
+  }
+  
+  .admin-header form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-header input[type="text"],
+  .admin-header textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .admin-header input[type="text"]:focus,
+  .admin-header textarea:focus {
+    border-color: #007bff; /* Màu khi focus */
+  }
+  
+  .admin-header textarea {
+    resize: vertical; /* Cho phép điều chỉnh kích thước theo chiều dọc */
+  }
+  
+  .admin-header button[type="submit"] {
+    padding: 12px 20px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-header button[type="submit"]:hover {
+    background-color: chocolate; 
+  }
+  

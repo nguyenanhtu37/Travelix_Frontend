@@ -363,6 +363,14 @@
   padding-top: 20px;
 }
 
+.buttonCSS button {
+  background-color: cadetblue;
+}
+
+.buttonCSS button:hover{
+  background-color: #fd7e14;
+}
+
 .hotel-list button {
   background-color: #fd7e14;
   border-radius: 10px;
@@ -454,4 +462,16 @@
   font-size: 5px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.buttonCSSS {
+  margin-top: 20px;
+}
+
+.buttonCSSS button {
+  background-color: cadetblue;
+}
+
+.buttonCSSS button:hover {
+  background-color: #fd7e14;
 }
