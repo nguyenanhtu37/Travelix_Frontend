@@ -8,6 +8,8 @@ import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import HomePageUser from './components/HomePageUser';
+import CarRentals from './components/CarRentals';
+import CarRentalsDetail from './components/CarRentalsDetail';
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path='/homepageuser' element={<HomePageUser />} />
+          <Route path="/carrentals" element={<CarRentals/>} />
+          <Route path="/carRentalsDetail/:registrationNumber" element={<CarRentalsDetail/>} />  
+
 
           <Route
             path="/protected-route"

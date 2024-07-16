@@ -63,8 +63,8 @@ const HomePageUser = () => {
                     <nav className="navbar-nav">
                         <ul className="nav">
                             {/* <li className="nav-item">
-                <Link to="/" className="nav-link">Home</Link>
-              </li> */}
+                                    <Link to="/" className="nav-link">Home</Link>
+                                </li> */}
                             <li className="nav-item">
                                 <Link to="/homepageuser" className="nav-link">Destinations & Trips</Link>
                             </li>

@@ -1,0 +1,112 @@
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cars {
+    justify-content: center;
+  }
+
+  .car__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .car__item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .cars__img {
+    width: 100%;
+  }
+  
+  .cars__img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .car__details {
+    padding: 15px;
+  }
+  
+  .car__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .car__location {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .car__price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  
+  .car__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+  }
+  
+  .car__actions .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 8px;
+  }
+  
+  .car__actions .btn-secondary {
+    background-color: #6c757d;
+  }
+
+  .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filter-bar button {
+    background-color: #007bff;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+  }
+  
+  .filter-bar button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .filter-bar button:focus {
+    outline: none;
+    background-color: #e0e0e0;
+  }
+  
