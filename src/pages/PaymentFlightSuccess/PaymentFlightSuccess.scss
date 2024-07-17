@@ -97,16 +97,30 @@
         flex-direction: column;
         width: 60%;
         gap: 20px;
+        align-items: center;
+        border-radius: 20px;
+
+        img{
+            width: 200px;
+        }
 
         h1,
         h2 {
-            color: gray;
+            color: green;
             font-size: 20px;
         }
 
         p {
             font-size: 20px;
             font-weight: bold;
+        }
+
+        .btnHome{
+            padding: 10px 20px;
+            border: 1px dotted green;
+            color: green;
+            text-decoration: none;
+            border-radius: 10px;
         }
 
 

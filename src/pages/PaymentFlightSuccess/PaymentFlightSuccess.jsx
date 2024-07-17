@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import axios from "axios";
 import "./PaymentFlightSuccess.scss";
+import success from "../../assets/images/404-tick.png";
 
 const PaymentFlightSuccess = () => {
-  const location = useLocation();
-  const { order } = location.state;
-
   return (
     <div className="paymentFlightSuccess">
       <header className="header">
@@ -15,9 +14,6 @@ const PaymentFlightSuccess = () => {
           </Link>
           <nav className="navbar-nav">
             <ul className="nav">
-              {/* <li className="nav-item">
-                <Link to="/" className="nav-link">Home</Link>
-              </li> */}
               <li className="nav-item">
                 <Link to="/destinationsandtripuser" className="nav-link">
                   Destinations & Trips
@@ -65,41 +61,11 @@ const PaymentFlightSuccess = () => {
           </div>
         </div>
       </header>
-      <div className="top">
-        <h1>Payment Successful</h1>
-        <Link to="/" className="btnBack">
-          Back
-        </Link>
-      </div>
       <div className="middle">
-        <h2>Order Details</h2>
-        <p>From: {order.flightDetails.from}</p>
-        <p>To: {order.flightDetails.to}</p>
-        <p>
-          Departure Date:{" "}
-          {new Date(order.flightDetails.departureDate).toLocaleString()}
-        </p>
-        <p>Number of Adults: {order.flightDetails.numAdults}</p>
-        <p>Number of Children: {order.flightDetails.numChildren}</p>
-        <p>Seat Class: {order.flightDetails.seatClass}</p>
-        <p>Total Price: {order.totalPrice} VND</p>
-      </div>
-      <div className="middle">
-        <h2>Contact Information</h2>
-        <p>Name: {order.contactInfo.name}</p>
-        <p>Phone: {order.contactInfo.phone}</p>
-        <p>Email: {order.contactInfo.email}</p>
-      </div>
-      <div className="bottom">
-        <h2>Passenger Information</h2>
-        {order.passengerInfo.map((passenger, index) => (
-          <div key={index}>
-            <h3>Passenger {index + 1}</h3>
-            <p>Name: {passenger.name}</p>
-            <p>Age: {passenger.age}</p>
-            <p>Type: {passenger.type}</p>
-          </div>
-        ))}
+        <img src={success} alt="" />
+        <h2>Successfull</h2>
+        <p>Flight has been successfully book.</p>
+        <Link className="btnHome">Go to homepage</Link>
       </div>
       <footer className="footer">
         <div className="footer-content">

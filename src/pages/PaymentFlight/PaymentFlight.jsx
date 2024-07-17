@@ -12,29 +12,22 @@ const PaymentFlight = () => {
     try {
       console.log("Order before payment:", order);
 
-      // Cập nhật trạng thái của đơn đặt hàng thành "Paid"
-      await axios.put(
-        `http://localhost:5000/api/orderflight/${order._id}/status`,
+      // Request VNPay payment URL from backend
+      const response = await axios.post(
+        "http://localhost:5000/api/orderflight/create_payment_url",
         {
-          status: "Paid",
+          orderId: order._id,
+          amount: order.totalPrice,
+          orderDescription: `Payment for order ${order._id}`,
         }
       );
 
-      console.log("Order after payment update:", order);
+      const { paymentUrl } = response.data;
 
-      // Send email
-      await axios.post(
-        "http://localhost:5000/api/orderflight/sendPaymentSuccessEmail",
-        {
-          email: order.contactInfo.email,
-          orderDetails: order,
-        }
-      );
-
-      // Điều hướng tới trang thanh toán thành công
-      navigate("/paymentflightsuccess", { state: { order } });
+      // Redirect to VNPay payment page
+      window.location.href = paymentUrl;
     } catch (error) {
-      console.error("Error updating order status:", error);
+      console.error("Error creating VNPay payment URL:", error);
     }
   };
 
@@ -111,8 +104,8 @@ const PaymentFlight = () => {
         <p>Total Price: {order.totalPrice} VND</p>
         <label>Payment method</label>
         <div className="checkMethodPayment">
-          <input type="radio" name="gender" value="male" checked />
-          <p>Cash payment</p>
+          <input type="radio" name="paymentMethod" value="vnpay" checked />
+          <p>VNPay</p>
         </div>
       </div>
       <div className="btnConfirm">
